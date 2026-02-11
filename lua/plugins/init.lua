@@ -12,7 +12,18 @@ return {
       require "configs.lspconfig"
     end,
   },
-
+  {
+  'mrcjkb/rustaceanvim',
+  version = '^7',
+  lazy = false,
+},
+{
+  'rust-lang/rust.vim',
+  ft = "rust",
+  init = function ()
+    vim.g.rustfmt_autosave = 1
+  end
+},
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
 

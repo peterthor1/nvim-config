@@ -1,6 +1,13 @@
 vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
 vim.g.mapleader = " "
 
+vim.opt.number = true
+vim.opt.relativenumber = true
+
+vim.keymap.set("n", "<space>q", function()
+  vim.diagnostic.open_float { scope = "line" }
+end, { noremap = true, silent = true })
+
 -- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
